@@ -108,9 +108,10 @@ if (SettingData == null) {
 currentVolume = SettingData[0];
 turntime = (18.5*SettingData[1])+150;
 SoundArray = [loss, win, Ultwin, LogoSound, FightSound, ZombieTurnTheme, PlantTurnTheme, MenuTheme, AlmanacTheme, PerkTheme];
-News = "This is special prisma version, you get to try stuff out before others<br><br> \
+//*le fix it 
+News = "Yoooo new update?? Epic epic cool (you've probably already noticed some of the new features)<br><br>\
 New features:<br>\
-A perks system! Now after you beat a boss wave, you get to choose a perk to equip. This perk will change your primary or grant a buff to increase your overall strength so that you can survive even longer.<br>\
+A perks system! Now after you beat a boss wave, you get to choose a perk to equip. This perk will change your primary, gain you a new ability, or grant a buff to increase your overall strength so that you can survive even longer.<br>\
 Epic cool backgrounds and colours to stimulate your brain via visual input.<br>\
 Added an almanac! Now you can view the descriptions and abilities of all the plants and zombies in the game that you have encountered.<br>\
 Peashooter is now Rock Pea.<br>\
@@ -124,7 +125,7 @@ Fixed bug where zombies wouldn’t use their ranged attack if they were within r
 Fixed bug where you could give yourself infinite health.<br>\
 <br>\
 Balance changes:<br>\
-RNG has been completely removed from your abilities: your abilities will now always hit! Zombies can still miss though.<br>\
+All of your abilities now have a 100% chance to hit, zombies can still miss though.<br>\
 Cone Crabs can now duplicate sooner.<br>\
 Coneoisseur’s melee attack is now stronger.<br>";
 function RemoveBlocker() {
@@ -180,7 +181,7 @@ function LoadNew() {
     Message.appendChild(CloseButton);
     MessageHeader = document.createElement("p");
     MessageHeader.className = "MessageHeader";
-    MessageHeader.innerHTML = "What's new in Version ???";
+    MessageHeader.innerHTML = "What's new in Version 1.9.0";
     Message.appendChild(MessageHeader);
     MessageText = document.createElement("p");
     MessageText.className = "MessageText";
@@ -440,7 +441,7 @@ function BackToMenu() {
     wc.appendChild(MenuBackground);
     vc = document.createElement("div");
     vc.id="VersionCount";
-    vc.innerHTML="Beta Version ???";
+    vc.innerHTML="Beta Version 1.9.0";
     wc.appendChild(vc);
     tc = document.createElement("div");
     tc.id="TitleContainer";
@@ -1055,9 +1056,6 @@ function FireProjectile() {
                 }
             }
         }
-            //*go through the array of shots, not array of red tiles
-            //*do damge to first zombie until out of shots or zombie dead, then go to next zombie if have shots left
-            //*if perices do damage to all zombies * number of shots
         updategrid();
         UpdateTurnCount();
     }
