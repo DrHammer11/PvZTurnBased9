@@ -894,6 +894,10 @@ function RemoveZombie(zombie) {
         CheckZindexes();
     }
     foundZombies = loadData("foundZombies");
+    if (foundZombies == null) {
+        foundZombies = []
+        UpdateData(foundZombies,"foundZombies");
+    }
     if (!(foundZombies.includes(zombie.name))) {
         foundZombies.push(zombie.name); 
         UpdateData(foundZombies,"foundZombies");
